@@ -1,0 +1,32 @@
+
+/* format:
+div.form-group
+   input.form-control
+   span.form-message
+add invalid to form-group to show the invalid input case
+ */
+.form-control.invalid  {
+    border-color: #f33a58;
+  }
+  .form-control.invalid ~ .form-message {
+    color: #f33a58;
+    display:block;
+  }
+  .submit-failed  {
+    transition: .2s all ease;
+    background-color: #f33a58;
+  }
+  .submit-failed ~ .form-message {
+    color: #f33a58;
+    display:block;
+  }
+  .form-message {
+    font-size: .8rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+    display:none;
+  }
+  .dropdown-form-group:has(.invalid) ~ .form-message{
+    color: #f33a58;
+    display:block;
+  }
