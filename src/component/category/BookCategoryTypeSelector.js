@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { getBookCategories_byPage, getDataByLink } from "../utils/ApiFunctions"
+import { getBookCategories_byPage } from "../../api/category";
+import { getDataByLink } from "../../api/pagination";
 import "../utils/css/dropdown.css"
 import Paginator from "../common/Paginator";
 

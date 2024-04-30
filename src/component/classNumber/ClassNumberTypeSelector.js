@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { getClassNumber_byPage, getDataByLink } from "../utils/ApiFunctions"
+import { getClassNumber_byPage } from "../../api/classNumber";
+import { getDataByLink } from "../../api/pagination";
 import "../utils/css/dropdown.css"
 import "../utils/css/validateForm.css"
 import Paginator from "../common/Paginator";

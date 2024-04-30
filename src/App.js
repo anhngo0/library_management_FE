@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BookCategoryTypeSelector from './component/common/BookCategoryTypeSelector';
-import AddBook from './component/book/AddBook';
+import AddBook from './component/book/createNewBook/AddBook';
 
 function Application() {
     return (
