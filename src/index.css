@@ -1,0 +1,45 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .page-item {
+    margin: 0 0.25rem;
+  }
+  
+  .page-link {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .page-link:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .page-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
