@@ -1,20 +1,28 @@
 import paths from "./path";
 import Home from "../pages/Home";
-import BookNew from "../pages/BookNew";
+import BookNominated from "../pages/BookNominated";
 import RegisterMember from "../pages/RegisterMember";
 
+
+
 const allRouter = [
+    // *** COMMON PAGE ***
     {
         path:paths.Home,
         component:Home
     },
     {
-        path:paths.BookNew,
-        component:BookNew
+        path:paths.BookNominated,
+        component:BookNominated
     },
     {
         path:paths.RegisterMember,
         component:RegisterMember
-    }
+    },
+
+
+    
+
+    
 ]
 export default allRouter;

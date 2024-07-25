@@ -2,19 +2,31 @@ import Header from "../components/header";
 import Navigation from "../components/navigation";
 import Download from "../components/download";
 import LogoPage from "../components/logoPage";
+import Footer from "../components/footer";
 const Home = () => {
     return (
-        <>
+        <div className="container">
             <Header />
             <Navigation />
             <div className="w-[70%] m-auto ">
             <LogoPage contentLogoPage1={'THÔNG TIN CHUNG'} contentLogoPage2={'thông tin chung'}/>
                 <div className="pt-[50px]">
-                    <p>Trung tâm giao lưu Văn Hóa Nhật Bản tại Việt Nam dành trọn không gian tầng 1 làm thư viện với mong muốn đưa đến cho độc giả những ấn phẩm gồm sách, tạp chí cũng như các đĩa CD, DVD giới thiệu về văn hóa Nhật Bản bằng tiếng Nhật, tiếng Anh và tiếng Việt. Ngoài ra các bạn cũng có thể tham khảo và trau dồi thêm khả năng ngôn ngữ thông qua rất nhiều đầu sách và tài liệu liên quan đến việc dạy và học tiếng Nhật. Thư viện mở cửa tự do để phục vụ độc giả, trong trường hợp bạn muốn mượn sách, vui lòng đăng ký thẻ hội viên.</p>
-                    <div className="flex items-center gap-2 pt-2">
-                        <img src="../../public/images/img-home1.png" alt="" />
-                        <img src="../../public/images/img-home2.png" alt="" />
+                    <p>Trung tâm dành trọn không gian tầng 1 làm thư viện với mong muốn đưa đến cho độc giả những ấn phẩm gồm sách, tạp chí cũng như các đĩa CD, DVD giới thiệu về văn hóa Nhật Bản bằng tiếng Nhật, tiếng Anh và tiếng Việt. Ngoài ra các bạn cũng có thể tham khảo và trau dồi thêm khả năng ngôn ngữ thông qua rất nhiều đầu sách và tài liệu liên quan đến việc dạy và học tiếng Nhật
+                        . Thư viện mở cửa tự do để phục vụ độc giả, trong trường hợp bạn muốn mượn sách, vui lòng đăng ký thẻ hội viên.</p>
+                    <div className="row pt-3">
+                        <div className="col-6 p-1">
+                            <div className="container p-0">
+                                <img src="../../public/images/img-home1.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="col-6 p-1">
+                            <div className="container p-0">
+                                <img src="../../public/images/img-home2.png" alt="" />
+                            </div>
+                        </div>
                     </div>
+                    {/* <div className="flex items-center gap-2 pt-2">
+                    </div> */}
                 </div>
                 <div className="pt-[50px]">
                     <span className="block"> Dịch vụ thư viện:</span>
@@ -29,7 +41,7 @@ const Home = () => {
                 <div className="pt-[50px]">
                     <span className="block">   ■ Số điện thoại</span>
                     <span className="block">
-                        024-3944-7419 (Số máy lẻ: 118)
+                        xxx-xxxx-xxxx (Số máy lẻ: xxx)
                     </span>
                     <span className="block">
                         ■ Thời gian mở cửa
@@ -46,7 +58,8 @@ const Home = () => {
                 <Download pageDown={' Danh mục Sách - Thư viện Japan Foundation'}/>
                
             </div>
-        </>
+            <Footer/>
+        </div>
     );
 };
 

@@ -2,6 +2,8 @@ import Header from "../components/header";
 import Navigation from "../components/navigation";
 import LogoPage from "../components/logoPage";
 import Download from "../components/download";
+import Footer from "../components/footer";
+
 const RegisterMember = () => {
     return (
         <> 
@@ -37,6 +39,7 @@ const RegisterMember = () => {
             </div>
             <Download pageDown={'Mẫu đăng ký'}/>
              </div>
+             <Footer/>
         </>
     );
 };

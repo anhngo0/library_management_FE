@@ -7,7 +7,7 @@ const navigation = () => {
                     <Link to={'/'}>Thông Tin Chung</Link>
                 </li>
                 <li className="text-[#fff]  text-[14px]">
-                    <Link to={'/BookNew'}>Sách Mới</Link>
+                    <Link to={'/BookNominated'}>Sách Đề cử</Link>
                 </li>
                 <li className="text-[#fff] text-[14px]">
                     <Link to={'/RegisterMember'}>Đăng Ký Thành VIên</Link>
