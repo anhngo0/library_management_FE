@@ -14,3 +14,16 @@ I build the common pages (those no need to login) based on japan foundation libr
         - Steps: + Run command 'npm clean install'
                  + Then run 'npm run dev'
 
+## Web Features
+This frontend part has following pages (at this time):
+### Common Pages (No need to login):
+        - common home page : users can see common library information.
+        - nominated books page: users can see nominated books.
+        - How to be a member of library: users can see how to sign in borrowing books service information.
+### Login pages:
+        - login page: (librarian and manager) login to access management pages using username and password.
+        - forgot password page: In case forgetting password, they can type their account's email to send link reset. Click to the link to redirect to reset password page.
+        - reset password page: type new password and confirm it by type again in confirm field. The form is invalid after 15 minutes.
+### Management pages
+       - account page: where (librarian and manager) can see himself/herself profile. 
+       - book's management page: where (librarian and manager) can view / add/ update / delete books and add book to nominated list or new list.
