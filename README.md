@@ -8,9 +8,7 @@ I build the common pages (those no need to login) based on japan foundation libr
 -  Clone this project.  
 -  Open this project folder on your terminal.
 -  After running successfully, you can use account with username: NhatAn and password: NhatAn to login in manager role. / or username: MaiAnh and password: Graeme139 to login in librarian role
-### Using Docker:
-        - Prerequisite: Having docker installed on your computer
-        - Steps:  Run command 'docker-compose up --build'
+
 ### Using npm command
         - Prerequisite: Having nodejs installed on your computer
         - Steps: + Run command 'npm clean install'
