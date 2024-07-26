@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import SideBar from "../../../components/management/layout/SideBar";
-import { getCurrentUserInfo } from "../../../api/user";
+import { changeCurrentUserProfile, getCurrentUserInfo } from "../../../api/user";
 function Account() {
     const [image, setImage] = useState();
     const [account, setAccount] = useState({});
     const [updateMode, setUpdateMode] = useState(false);
     const [updatedProfile, setUpdatedProfile] = useState({}); 
+    const [successMessage, setSuccessMessage] = useState("");
 
     useEffect(() => {
         //fetch account api
@@ -23,13 +24,17 @@ function Account() {
             ...updatedProfile,
             [e.target.name]: value
         }
-        console.log(newProfile);
         setUpdatedProfile(newProfile);
     }
 
     const confirmChangeProfile = (e) => {
         e.preventDefault();
-        //call api here
+        changeCurrentUserProfile(updatedProfile).then(response => {
+            if(response.status === 200){
+                setSuccessMessage("Thay đổi thông tin thành công");
+                setUpdateMode(false);
+            }
+        })
     } 
 
     return (
@@ -99,6 +104,7 @@ function Account() {
                             
                             <input disabled={updateMode ? false: true} type="file" name="quantity" className="form-control w-100 mt-3" 
                             onChange={e => {e.preventDefault(); setImage(e.target.files[0])}}/>
+                            {successMessage ? <p className="text-success">{successMessage}</p> : <p></p>}
                         </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getBookById, updateBookById, addBookToNewList, addBookToNominatedList } from "../../../api/book";
+import { getBookById, updateBookById, addBookToNewList, addBookToNominatedList, removeBookFromList } from "../../../api/book";
 import Book_Class_Number_Selector from "../../../components/management/book_class_number/Book_Class_Number_Selector";
 import Book_Category_Selector from "../../../components/management/book_category/Book_Category_Selector";
 function BookInDetails() {
@@ -12,13 +12,13 @@ function BookInDetails() {
     const [updateMode, setUpdateMode] = useState(false);
     const [updatedBook, setUpdatedBook] = useState({});
 
-    const [isSuccessAdd, setIsSuccessAdd] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
     useEffect(() => {
         getBookById(id).then(response => {
             setBookInfo(response);
             setImage(response.base64Data ? `data:image/jpeg;base64,${response.base64Data}` :"../../../../public/images/images_not_ound.png")
-            console.log(response);
+    
             setUpdatedBook(response);
         })
        
@@ -43,27 +43,38 @@ function BookInDetails() {
             ...updatedBook,
             [e.target.name]: value
         }
-        console.log(newBook);
         setUpdatedBook(newBook);
     }
 
     const addToNewList = e => {
         e.preventDefault();
+        setSuccessMessage("")
         addBookToNewList(id).then(response => {
             
             if (response.status === 200) {
-                setIsSuccessAdd("Thêm vào danh sách sách mới thành công")
+                setSuccessMessage("Thêm vào danh sách sách mới thành công")
             }
         }) 
     }
     
     const addToNominatedList = e => {
+        setSuccessMessage("")
         e.preventDefault();
         addBookToNominatedList(id).then(response => {
             if (response.status === 200) {
-                setIsSuccessAdd("Thêm vào danh sách sách đề cử thành công")
+                setSuccessMessage("Thêm vào danh sách sách đề cử thành công")
             }
         }) 
+    }
+
+    const removeFromList = e => {
+        e.preventDefault();
+        setSuccessMessage("")
+        removeBookFromList([Number(id)]).then(response => {
+            if (response.status === 200) {
+                setSuccessMessage("Bỏ sách khỏi danh sách đề cử (hoặc mới) thành công")
+            }
+        })
     }
     return (
         <div className=" pt-3">
@@ -183,9 +194,10 @@ function BookInDetails() {
                     </div>
 
                     <div className="container d-flex flex-column align-items-center pt-3">
-                        <button onClick={e=> addToNewList(e)} className="btn btn-info">Thêm mới</button>
-                        <button onClick={e => addToNominatedList(e)}className="btn btn-info mt-3">Thêm đề cử</button>
-                        {isSuccessAdd ? <p className="text-success">Thêm thành công</p> : <p></p>}
+                        <button onClick={e=> addToNewList(e)} className="btn btn-info">Thêm vào danh sách sách mới</button>
+                        <button onClick={e => addToNominatedList(e)}className="btn btn-info mt-3">Thêm vào danh sách đề cử</button>
+                        <button onClick={e => removeFromList(e)}className="btn bg-gray-300 hover:bg-gray-400 duration-300 mt-3">Xóa khỏi danh sách đề cử /mới</button>
+                        {successMessage ? <p className="text-success">{successMessage}</p> : <p></p>}
                     </div>
                 </div>
 

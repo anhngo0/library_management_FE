@@ -15,7 +15,6 @@ const isAuthenticated = () => {
 };
 
 const ProtectedRoute = () => {
-  console.log(1);
   return isAuthenticated() ? <Outlet /> : <Navigate to="/login" />;
 };
 

@@ -98,6 +98,18 @@ export const addBookToNominatedList = async (id) => {
     }
 }
 
+export const removeBookFromList = async (bookListIds) => {
+    console.log(bookListIds);
+    try {
+        const response = await axiosClient.put(`/book/remove-list`,  bookListIds);
+        return response;
+        
+    } catch (error) {
+        console.log(error);
+        return "remove book from list error " + error;
+    }
+}
+
 export const createBook = async (updatedBook, file) => {
 
     try {
