@@ -4,6 +4,10 @@
 
 I build the common pages (those no need to login) based on japan foundation library website. There you can find many manga, magazines and Japanese books in a quiet and modernly decorated space. If you are a fan of japanese books and culture, this library is definitely a great choice to visit and enjoy.
 
+## Members
+-  Ho Tri Thanh
+-  Ngo Nhat Anh
+
 ## Install & Run on Localhost
 -  Clone this project.  
 -  Open this project folder on your terminal.
